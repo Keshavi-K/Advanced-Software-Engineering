@@ -32,6 +32,7 @@ public class UserRecord {
         return id;
     }
 
+
     public String getName() {
         return name;
     }

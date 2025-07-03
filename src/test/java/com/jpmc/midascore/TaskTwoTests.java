@@ -22,11 +22,15 @@ class TaskTwoTests {
 
     @Test
     void task_two_verifier() throws InterruptedException {
+        System.out.println("🟢 Embedded Kafka test running...");
+
         String[] transactionLines = fileLoader.loadStrings("/test_data/poiuytrewq.uiop");
+
         for (String transactionLine : transactionLines) {
+            System.out.println("📤 Sending: " + transactionLine);
             kafkaProducer.send(transactionLine);
         }
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         logger.info("----------------------------------------------------------");
         logger.info("----------------------------------------------------------");
         logger.info("----------------------------------------------------------");
